@@ -46,6 +46,8 @@ int MainWindow::waterForDate(const QDate &date) const {
     return m_waterData.value(date, 0);
 }
 
+
+
 void MainWindow::setWaterForDate(const QDate &date, int ml) {
     m_waterData[date] = ml;
 }

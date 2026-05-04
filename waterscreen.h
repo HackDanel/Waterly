@@ -6,13 +6,14 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class waterscreen;   // в нижнем регистре
+class waterscreen;
 }
 QT_END_NAMESPACE
 
 class MainWindow;
 
-class WaterScreen : public QWidget {
+class WaterScreen : public QWidget
+{
     Q_OBJECT
 
 public:
@@ -33,6 +34,7 @@ private:
     int m_dailyNorm = 2000;
     int m_currentWater = 0;
 
+    int computePercent() const;
     void syncUi();
 };
 

@@ -12,7 +12,7 @@ CalendarScreen::CalendarScreen(QWidget *parent)
 
 
 void CalendarScreen::syncUi() {
-    // здесь можно добавить визу подсветки дней, где есть данные
+
 }
 
 void CalendarScreen::on_calendarWidget_clicked(const QDate &date) {
