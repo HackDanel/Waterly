@@ -11,6 +11,7 @@ class waterscreen;
 QT_END_NAMESPACE
 
 class MainWindow;
+class WaterGlassWidget;
 
 class WaterScreen : public QWidget
 {
@@ -30,6 +31,7 @@ private slots:
 
 private:
     Ui::waterscreen *ui;
+    WaterGlassWidget *m_glassWidget;   // вместо progressBarWater
     QDate m_currentDate;
     int m_dailyNorm = 2000;
     int m_currentWater = 0;

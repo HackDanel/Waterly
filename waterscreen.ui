@@ -22,31 +22,42 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>220</y>
-     <width>437</width>
-     <height>108</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Норма выпитой воды (мл)</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinNorm">
-          <property name="styleSheet">
-           <string notr="true">QSpinBox {
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="WaterGlassWidget" name="waterGlassWidget" native="true"/>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Норма выпитой воды (мл)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinNorm">
+           <property name="styleSheet">
+            <string notr="true">QSpinBox {
     background-color: #0078D7;
     color: black;
     border: none;
@@ -85,18 +96,18 @@ QSpinBox:disabled::up-button,
 QSpinBox:disabled::down-button {
     background-color: #cccccc;
 }</string>
-          </property>
-          <property name="maximum">
-           <number>20000</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButtonSetDaily">
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+           </property>
+           <property name="maximum">
+            <number>20000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButtonSetDaily">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     background-color: #0078D7;
     color: white;
     border: none;
@@ -119,29 +130,41 @@ QPushButton:disabled {
     color: #666666;
 }
 </string>
-        </property>
-        <property name="text">
-         <string>Установить ежедневную норму</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Количество выпитой воды (мл)</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="spinWater">
-          <property name="styleSheet">
-           <string notr="true">QSpinBox {
+         </property>
+         <property name="text">
+          <string>Установить ежедневную норму</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Количество выпитой воды (мл)</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::TextFormat::MarkdownText</enum>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinWater">
+           <property name="styleSheet">
+            <string notr="true">QSpinBox {
     background-color: #0078D7;
     color: black;
     border: none;
@@ -180,20 +203,20 @@ QSpinBox:disabled::up-button,
 QSpinBox:disabled::down-button {
     background-color: #cccccc;
 }</string>
-          </property>
-          <property name="maximum">
-           <number>20000</number>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButtonAdd">
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
+           </property>
+           <property name="maximum">
+            <number>20000</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="pushButtonAdd">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
     background-color: #0078D7;
     color: white;
     border: none;
@@ -215,16 +238,16 @@ QPushButton:disabled {
     background-color: #cccccc;
     color: #666666;
 }</string>
-          </property>
-          <property name="text">
-           <string>+100 мл</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButtonSub">
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
+           </property>
+           <property name="text">
+            <string>+100 мл</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonSub">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
     background-color: #0078D7;
     color: white;
     border: none;
@@ -246,45 +269,28 @@ QPushButton:disabled {
     background-color: #cccccc;
     color: #666666;
 }</string>
-          </property>
-          <property name="text">
-           <string>-100 мл</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QProgressBar" name="progressBarWater">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>150</y>
-     <width>118</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QProgressBar {
-    border: 1px solid #e9ecef;
-    border-radius: 4px;
-    text-align: center;
-    color: #000;
-}
-
-QProgressBar::chunk {
-    background-color: #0078D7;
-    border-radius: 3px;
-}</string>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
+           </property>
+           <property name="text">
+            <string>-100 мл</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>WaterGlassWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">waterglasswidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>spinNorm</tabstop>
   <tabstop>pushButtonSetDaily</tabstop>
