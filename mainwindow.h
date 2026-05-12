@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMap>
 #include <QDate>
+#include <QSystemTrayIcon>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,6 +18,13 @@ class CalendarScreen;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
+
+private slots:
+    void showWaterReminder();
+    void onTrayActivated(QSystemTrayIcon::ActivationReason reason);
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
@@ -30,8 +39,11 @@ signals:
 private:
     Ui::MainWindow *ui;
     QMap<QDate, int> m_waterData;
+    QSystemTrayIcon *m_trayIcon;
+    QTimer *m_reminderTimer;
 
     void setupStackedWidget();
 };
+
 
 #endif // MAINWINDOW_H
